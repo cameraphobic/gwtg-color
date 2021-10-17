@@ -1,0 +1,56 @@
+/** {
+    border: 1px solid blue;
+}*/
+
+html {
+    font-size: 16px;
+}
+
+/* HOME PAGE */
+
+header {
+    background-image: url(../images/photos/l-canyon-clouds.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* NESTED NAVIGATION ELEMENT */
+
+.sidebar a {
+    color: white;
+}
+
+.sidebar a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar a:visited {
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar li .submenu{ 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	padding-left: 1rem; 
+	padding-right: 1rem;
+}
+
+/* FORM FIELD STYLING */
+
+.form-control {
+    border: none;
+    border-bottom: 3px solid black;
+    border-radius: 0%;
+  }
+
+  /* THUMBNAIL GALLERIES */
+
+.overlap-up {
+    position: absolute;
+    z-index: 9;
+    margin: -5%;
+}

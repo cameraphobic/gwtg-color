@@ -7,15 +7,138 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
-    <title>Hello, world!</title>
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/7e04dc6d90.js" crossorigin="anonymous"></script>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="resources/css/normalize.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="resources/css/style.css">
+
+    <title>Home</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+            <!-- Banner utilities -->
+            <nav class="navbar sticky-top navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand">Go With The Grain</a>
+                  <div class="d-flex flex-row">
+                  <form class="d-flex mx-5">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search" type="submit"><i class="fas fa-search fa-lg"></i></button>
+                  </form>
+                  <i class="fas fa-shopping-cart fa-lg mx-2 my-auto"></i>
+                  <i class="fas fa-user-astronaut fa-lg mx-3 my-auto"></i>
+                </div>
+                </div>
+              </nav>
+            <!-- Header and nested nav -->
+            <header class="bg-dark py-5">
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col-3">
+                            <nav class="sidebar py-2 mb-4">
+                                <ul class="nav flex-column" id="nav_accordion">
+                                    <li class="nav-item has-submenu">
+                                        <a class="nav-link" href="#">Shop</a>
+                                        <ul class="submenu collapse">
+                                            <li><a class="nav-link" href="#">Film</a></li>
+                                            <li><a class="nav-link" href="#">Darkroom Accessories</a></li>
+                                            <li><a class="nav-link" href="#">Gifts & Cards</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item has-submenu">
+                                        <a class="nav-link" href="#">Photography Services</a>
+                                        <ul class="submenu collapse">
+                                            <li><a class="nav-link" href="#">Film Processing</a></li>
+                                            <li><a class="nav-link" href="#">Printing</a></li>
+                                            <li><a class="nav-link" href="#">Digital Services</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item has-submenu">
+                                        <a class="nav-link" href="#">About Us</a>
+                                        <ul class="submenu collapse">
+                                            <li><a class="nav-link" href="#">Our Team</a></li>
+                                            <li><a class="nav-link" href="#">Testimonials</a></li>
+                                            <li><a class="nav-link" href="#">Blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item has-submenu">
+                                        <a class="nav-link" href="#">How it Works</a>
+                                        <ul class="submenu collapse">
+                                            <li><a class="nav-link" href="#">Turnaround Times</a></li>
+                                            <li><a class="nav-link" href="#">Price Guides</a></li>
+                                            <li><a class="nav-link" href="#">How to Mail Film</a></li>
+                                            <li><a class="nav-link" href="#">Risk-Free Policy</a></li>
+                                            <li><a class="nav-link" href="#">Order Gift Cards</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item has-submenu">
+                                        <a class="nav-link" href="#">Help & Support</a>
+                                        <ul class="submenu collapse">
+                                            <li><a class="nav-link" href="#">Frequently Asked Questions</a></li>
+                                            <li><a class="nav-link" href="#">DIY Guides</a></li>
+                                            <li><a class="nav-link" href="#">Returns & Exchanges</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                </nav>
+                        </div>
+                        <div class="col text-left text-white">
+                            <h1 class="display-4 fw-bolder">Oh, Snap.</h1>
+                            <p class="lead fw-normal text-white mb-0">An online resource for analog enthusiasts of all levels.</p>
+                        </div>    
+                    </div>
+                </div>
+            </header>
+            <section class="mx-5 overlap-up">
+                <div class="row row-cols-1 row-cols-md-3 g-4 offset-3">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </section>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="resources/js/interactions.js"></script>
 
 
   </body>

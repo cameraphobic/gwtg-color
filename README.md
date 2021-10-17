@@ -1,3 +1,2 @@
 # gwtg
 Film and analog photography services ecommerce prototype
-Better work this time...
