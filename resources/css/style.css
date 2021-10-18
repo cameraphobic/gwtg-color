@@ -6,6 +6,10 @@ html {
     font-size: 16px;
 }
 
+body {
+    position: relative;
+}
+
 /* BANNER UTILITIES */
 
 .navbar-brand {
@@ -28,23 +32,25 @@ header {
     margin-top: 8rem;
 }
 
+.sidebar li a {
+    color: white;
+}
+
 .navlink {
     padding: 2rem;
 }
 
 .sidebar a {
-    color: white;
     display: block;
 }
 
 .sidebar a:hover {
-    color: white;
     font-weight: bold;
     transition: .3s;
+    color: white
 }
 
 .sidebar a:visited {
-    color: white;
     font-weight: bold;
 }
 
@@ -59,10 +65,6 @@ header {
 .fixed {
     position: fixed;
     display: block;
-}
-
-.line-status {
-    color: black;
 }
 
 /* HEADER STYLING */

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }); 
   // DOMContentLoaded  end
 
-window.addEventListener("scroll", function(event) {
+  window.addEventListener("scroll", function(event) {
   var scroll = this.scrollY;
   if(scroll > 400) {
     this.document.body.style.backgroundColor = "pink";
@@ -35,12 +35,3 @@ window.addEventListener("scroll", function(event) {
     this.document.body.style.backgroundColor = "white";
   }
 });
-
-/* window.addEventListener("scroll", function(event) {
-  var scroll = this.scrollY;
-  if(scroll > 400) {
-    this.document.header.style.color = "pink";
-  } else {
-    this.document.header.style.color = "white";
-  }
-}); */
