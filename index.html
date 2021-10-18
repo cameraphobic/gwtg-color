@@ -21,8 +21,9 @@
     <title>Home</title>
   </head>
   <body>
-            <!-- Banner utilities -->
-            <nav class="navbar sticky-top navbar-light bg-light">
+
+            <!-- BANNER UTILITIES -->
+            <nav class="navbar fixed-top navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand">Go With The Grain</a>
                   <div class="d-flex flex-row">
@@ -35,11 +36,12 @@
                 </div>
                 </div>
               </nav>
-            <!-- Header and nested nav -->
+
+            <!-- HERO -->
+
             <header class="bg-dark py-5">
-                <div class="container my-5">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col fixed">
                             <nav class="sidebar py-2 mb-4">
                                 <ul class="nav flex-column" id="nav_accordion">
                                     <li class="nav-item has-submenu">
@@ -85,26 +87,41 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                </nav>
-                        </div>
-                        <div class="col text-left text-white">
-                            <h1 class="display-4 fw-bolder">Oh, Snap.</h1>
-                            <p class="lead fw-normal text-white mb-0">An online resource for analog enthusiasts of all levels.</p>
-                        </div>    
+                            </nav>
+                        </div>  
+                    </div>
+            </header>
+
+            <!-- NEW AND BACK IN STOCK GALLERY -->
+
+            <section class="mx-5 overlap-up col-8 passing-lane">
+                <div class="row">
+                    <div class="col text-left text-white mb-5 pb-5">
+                        <h1 class="hero">Oh, snap.</h1>
+                        <p>An online resource for analog enthusiasts of all levels.</p>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col eyebrow-light">
+                        <h2 class="text-white">New & Back in Stock</h2>
                     </div>
                 </div>
-            </header>
-            <section class="mx-5 overlap-up">
-                <div class="row row-cols-1 row-cols-md-3 g-4 offset-3">
+                <div class="row px-0">
                     <div class="col">
                       <div class="card h-100">
                         <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
                         </div>
                         <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
                         </div>
                       </div>
                     </div>
@@ -112,11 +129,17 @@
                       <div class="card h-100">
                         <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
                         </div>
                         <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
                         </div>
                       </div>
                     </div>
@@ -124,22 +147,118 @@
                       <div class="card h-100">
                         <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
                         </div>
                         <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
                         </div>
                       </div>
                     </div>
                   </div>
+
+            <!-- FLASH SALE GALLERY -->
+
+                <div class="row mt-5">
+                    <div class="col eyebrow-dark">
+                        <h2>Flash Sale</h2>
+                    </div>
+                </div>
+                <div class="row px-0">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DECISIVE MOMENT GALLERY -->
+
+                  <div class="row mt-5">
+                    <div class="col eyebrow-dark">
+                        <h2>The Decisive Moment</h2>
+                    </div>
+                </div>
+                <div class="row px-0">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Product Title</h5>
+                          <p class="card-text">$100.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <small>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </small>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </section>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="resources/js/interactions.js"></script>
-
-
+    <script src="resources/js/scripts.js"></script>
   </body>
 </html>

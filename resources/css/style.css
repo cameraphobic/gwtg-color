@@ -6,24 +6,41 @@ html {
     font-size: 16px;
 }
 
-/* HOME PAGE */
+/* BANNER UTILITIES */
+
+.navbar-brand {
+    margin-left: 2rem;
+}
+
+/* HERO */
 
 header {
     background-image: url(../images/photos/l-canyon-clouds.jpg);
     background-size: cover;
     background-position: center;
-    position: relative;
+    min-height: 40rem;
 }
 
 /* NESTED NAVIGATION ELEMENT */
 
+.sidebar {
+    margin-left: 2rem;
+    margin-top: 8rem;
+}
+
+.navlink {
+    padding: 2rem;
+}
+
 .sidebar a {
     color: white;
+    display: block;
 }
 
 .sidebar a:hover {
     color: white;
     font-weight: bold;
+    transition: .3s;
 }
 
 .sidebar a:visited {
@@ -39,18 +56,53 @@ header {
 	padding-right: 1rem;
 }
 
+.fixed {
+    position: fixed;
+    display: block;
+}
+
+.line-status {
+    color: black;
+}
+
+/* HEADER STYLING */
+
+.hero {
+    color: white;
+    font-weight: lighter;
+    font-size: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+.eyebrow-light {
+    border-bottom: 2px solid white;
+    margin-bottom: 2rem;
+}
+
+.eyebrow-dark {
+    border-bottom: 2px solid black;
+    margin-bottom: 2rem;
+}
+
 /* FORM FIELD STYLING */
 
 .form-control {
     border: none;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
     border-radius: 0%;
   }
 
-  /* THUMBNAIL GALLERIES */
+  /* HOMEPAGE CONTENT */
 
 .overlap-up {
-    position: absolute;
-    z-index: 9;
-    margin: -5%;
+    margin: -30rem;
+}
+
+.passing-lane {
+    float: right;
 }
