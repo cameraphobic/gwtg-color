@@ -1,3 +1,5 @@
+/* NESTED NAV */
+
 document.addEventListener("DOMContentLoaded", function(){
     document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
       
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }) // forEach
   }); 
   // DOMContentLoaded  end
+
+/* CHANGE BODY COLOR ON SCROLL */
 
   window.addEventListener("scroll", function(event) {
   var scroll = this.scrollY;
