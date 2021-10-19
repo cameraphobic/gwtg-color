@@ -25,7 +25,7 @@ header {
     min-height: 40rem;
 }
 
-/* NESTED NAVIGATION ELEMENT */
+/* NESTED NAV WHITE */
 
 .sidebar {
     margin-left: 2rem;
@@ -47,11 +47,12 @@ header {
 .sidebar a:hover {
     font-weight: bold;
     transition: .3s;
-    color: white
+    color: white;
 }
 
 .sidebar a:visited {
     font-weight: bold;
+    color: white;
 }
 
 .sidebar li .submenu{ 
@@ -67,6 +68,20 @@ header {
     display: block;
 }
 
+/* NESTED NAV BLACK */
+
+.black-side li a {
+    color: black;
+}
+
+.black-side a:hover {
+    color: black;
+}
+
+.black-side a:visited {
+    color: black;
+}
+
 /* HEADER STYLING */
 
 .hero {
@@ -79,16 +94,16 @@ header {
 
 h2 {
     font-weight: 300;
+    margin-bottom: 0;
+    padding-bottom: .2rem;
 }
 
 .eyebrow-light {
     border-bottom: 2px solid white;
-    margin-bottom: 2rem;
 }
 
 .eyebrow-dark {
     border-bottom: 2px solid black;
-    margin-bottom: 2rem;
 }
 
 /* FORM FIELD STYLING */
@@ -107,4 +122,10 @@ h2 {
 
 .passing-lane {
     float: right;
+}
+
+/* FOOTER STYLING */
+
+footer {
+    color: white;
 }
