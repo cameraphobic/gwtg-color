@@ -114,8 +114,16 @@ h2 {
     border-radius: 0%;
 }
 
-input .qty {
-    border: solid red 1px;
+.qty {
+    /*border: solid red 1px;*/
+    max-width: 9rem;
+}
+
+/* CARD STYLING */
+
+.stretched-link {
+    text-decoration: none;
+    color: black;
 }
 
 /* HOMEPAGE CONTENT */
