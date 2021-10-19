@@ -112,9 +112,13 @@ h2 {
     border: none;
     border-bottom: 2px solid black;
     border-radius: 0%;
-  }
+}
 
-  /* HOMEPAGE CONTENT */
+input .qty {
+    border: solid red 1px;
+}
+
+/* HOMEPAGE CONTENT */
 
 .overlap-up {
     margin: -30rem;
