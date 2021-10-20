@@ -38,10 +38,12 @@ header {
 
 .navlink {
     padding: 2rem;
+    color: white;
 }
 
 .sidebar a {
     display: block;
+    color: white;
 }
 
 .sidebar a:hover {
@@ -61,6 +63,7 @@ header {
 	padding: 0; 
 	padding-left: 1rem; 
 	padding-right: 1rem;
+    color: white;
 }
 
 .fixed {
@@ -152,8 +155,53 @@ h2 {
   border-radius: 50%;
   cursor: none;
   /*Set the size of the magnifier glass:*/
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+}
+
+/* SAMPLE IMAGE GALLERY */
+
+.gallery {
+    display: block;
+    position: relative;
+}
+
+.gallery:hover .thumb {
+    opacity: .7;
+}
+
+.thumb {
+    display: block;
+    height: 100px;
+    width: 12.5%;
+    background: no-repeat center center;
+    background-size: cover;
+    transition: opacity 600ms;
+}
+
+.thumb.koi {
+    background-image: url(../images/photos/l-koi.jpg);
+}
+
+.thumb.car {
+    background-image: url(../images/photos/l-red-blossoms.jpg);
+}
+
+.thumb.records {
+    background-image: url(../images/photos/l-record-store.jpg);
+}
+
+.thumb.signs {
+    background-image: url(../images/photos/l-signs.jpg);
+}
+
+.gallery .thumb:hover {
+    opacity: 1;
+}
+
+.thumb:before, .thumb:after {
+    opacity: 0;
+    width: 45%;
 }
 
 /* FOOTER STYLING */

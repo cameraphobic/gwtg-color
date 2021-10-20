@@ -20,13 +20,45 @@
             <link rel="stylesheet" href="resources/css/style.css">
         
             <title>Category</title>
+
+            <!-- NESTED NAV SCRIPT -->
+            <script>
+
+                document.addEventListener("DOMContentLoaded", function(){
+                    document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+                    
+                    element.addEventListener('click', function (e) {
+                
+                        let nextEl = element.nextElementSibling;
+                        let parentEl  = element.parentElement;	
+                
+                        if(nextEl) {
+                            e.preventDefault();	
+                            let mycollapse = new bootstrap.Collapse(nextEl);
+                            
+                            if(nextEl.classList.contains('show')){
+                                mycollapse.hide();
+                            } else {
+                                mycollapse.show();
+                                // find other submenus with class=show
+                                var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                                // if it exists, then close all of them
+                                if(opened_submenu){
+                                    new bootstrap.Collapse(opened_submenu);
+                                }
+                            }
+                        }
+                    }); // addEventListener
+                    }) // forEach
+                }); 
+            </script>
           </head>
           <body>
         
                     <!-- BANNER UTILITIES -->
                     <nav class="navbar fixed-top navbar-light bg-light">
                         <div class="container-fluid">
-                          <a class="navbar-brand">Go With The Grain</a>
+                          <a class="navbar-brand" href="index.html">Go With The Grain</a>
                           <div class="d-flex flex-row">
                           <form class="d-flex mx-5">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -229,13 +261,14 @@
                             </div>
                           </div>
 
+                        <!-- THUMBNAILS ROW 1-->    
 
                         <div class="row px-0">
                             <div class="col">
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -253,7 +286,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -271,7 +304,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -289,8 +322,8 @@
                                 <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">$100.00</p>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
+                                <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
                                     <small>
@@ -308,7 +341,7 @@
             </div>
         </section>
 
-        <!-- PRODUCT RESULTS ROW 2 -->
+        <!-- THUMBNAILS ROW 2 -->
 
         <section class="py-5 bg-light">
             <div class="row">
@@ -319,7 +352,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -337,7 +370,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -355,7 +388,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -373,8 +406,8 @@
                                 <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">$100.00</p>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
+                                <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
                                     <small>
@@ -392,7 +425,7 @@
             </div>
         </section>
 
-                <!-- PRODUCT RESULTS ROW 2 -->
+        <!-- THUMBNAILS ROW 3 -->
 
         <section class="py-5 bg-light">
             <div class="row">
@@ -403,7 +436,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -421,7 +454,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -439,7 +472,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -457,8 +490,8 @@
                                 <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">$100.00</p>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
+                                <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
                                     <small>
@@ -476,7 +509,7 @@
             </div>
         </section>
 
-        <!-- PRODUCT RESULTS ROW 2 -->
+        <!-- THUMBNAILS ROW 4 -->
 
         <section class="py-5 bg-light">
             <div class="row">
@@ -487,7 +520,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -505,7 +538,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -523,7 +556,7 @@
                             <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">Product Title</h5>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
                                 <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
@@ -541,8 +574,8 @@
                                 <div class="card h-100">
                                 <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">$100.00</p>
+                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
+                                <p class="card-text">$100.00</p>
                                 </div>
                                 <div class="card-footer">
                                     <small>
@@ -599,12 +632,7 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
         <!-- Shaack input spinner plugin -->
         <script src="./src/bootstrap-input-spinner.js"></script>
-        <script>
-            $("input[type='number']").inputSpinner()
-        </script>
     </body>
 </html>
