@@ -54,32 +54,17 @@
 
                 <!-- MAINTAIN Y POSITION ON REDIRECT -->
                 <script>
-                    // ORIGIN PAGE
-                    // ===========
+                    // DESTINATION PAGE
+                    // ================
 
-                    // Save Y Offset Position to localStorage
-                    const recordVerticalOffset = () => {
+                    const repositionPage = () => {
 
-                    localStorage.setItem('pageVerticalPosition', window.scrollY);
+                    let pageVerticalPosition = localStorage.getItem('pageVerticalPosition') || 0;
+
+                    window.scrollTo(0, pageVerticalPosition);
                     }
 
-                    // Only save window position after scrolling stops
-                    const throttleScroll = (delay) => {
-
-                    let time = Date.now();
-
-                    const checkScroll = setInterval(() => {
-
-                    if (Date.now() > (time + delay)) {
-
-                        clearInterval(checkScroll);
-                        return recordVerticalOffset();
-                    }
-                    }, 300);
-                    }
-
-                    // Scroll Event Listener
-                    window.addEventListener('scroll', throttleScroll(1000));
+                    window.addEventListener('load', repositionPage);
                 </script>
           </head>
           <body>
@@ -417,7 +402,7 @@
                                 </select>
                             </div>
                             <div class="col form-check form-switch">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault" id="toggle1"><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">Includes images</label>
+                                <label class="form-check-label" for="flexSwitchCheckChecked"><input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>Includes images</label>
                             </div>
                         </div>
                         <div class="row">

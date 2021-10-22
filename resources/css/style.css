@@ -102,11 +102,11 @@ h2 {
 }
 
 .eyebrow-light {
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
 }
 
 .eyebrow-dark {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 /* FORM FIELD STYLING */
