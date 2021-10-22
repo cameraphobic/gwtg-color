@@ -129,6 +129,26 @@ h2 {
     color: black;
 }
 
+/* FILTER STYLES */
+
+.form-check {
+    padding: .5rem;
+}
+
+.filter-core {
+    font-weight: 400;
+}
+
+.filter-count {
+    font-weight: 300;
+}
+
+.filter-pack {
+    font-style: italic;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
 /* HOMEPAGE CONTENT */
 
 .overlap-up {
