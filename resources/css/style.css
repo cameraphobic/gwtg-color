@@ -30,25 +30,27 @@ header {
 .sidebar {
     margin-left: 2rem;
     margin-top: 8rem;
+    font-size: .9rem;
 }
 
 .sidebar li a {
     color: white;
+    padding: .2rem;
 }
 
 .navlink {
-    padding: 2rem;
     color: white;
 }
 
 .sidebar a {
-    display: block;
+    display: inline-block;
+    text-decoration: none;
     color: white;
 }
 
 .sidebar a:hover {
     font-weight: bold;
-    transition: .3s;
+    transition: .4s;
     color: white;
 }
 
@@ -58,17 +60,25 @@ header {
 }
 
 .sidebar li .submenu{ 
-	list-style: none; 
-	margin: 0; 
+	list-style-type: none; 
+	margin: 0;
 	padding: 0; 
 	padding-left: 1rem; 
 	padding-right: 1rem;
     color: white;
 }
 
+.sidebar ul {
+    list-style-type: none;
+}
+
 .fixed {
     position: fixed;
     display: block;
+}
+
+.open {
+    font-weight: bold;
 }
 
 /* NESTED NAV BLACK */
@@ -78,10 +88,18 @@ header {
 }
 
 .black-side a:hover {
+    font-weight: bold;
+    transition: .4s;
     color: black;
 }
 
 .black-side a:visited {
+    color: black;
+}
+
+.black-side a {
+    display: inline-block;
+    text-decoration: none;
     color: black;
 }
 
@@ -113,12 +131,11 @@ h2 {
 
 .form-control {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     border-radius: 0%;
 }
 
 .qty {
-    /*border: solid red 1px;*/
     max-width: 9rem;
 }
 
@@ -223,6 +240,60 @@ h2 {
     opacity: 0;
     width: 45%;
 }
+
+/* PRODUCT PAGE */
+
+.price {
+    font-size: 2rem;
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container-zoom {
+    position: relative;
+    width: 100%;
+  }
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  /* When you mouse over the container, fade in the overlay icon*/
+.container-zoom:hover .overlay {
+    opacity: 1;
+  }
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.zoom-icon {
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    top: 95%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.loupe-icon {
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    top: 95%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* When you move the mouse over the icon, change color */
+.fa-user:hover {
+    color: #eee;
+  }
 
 /* FOOTER STYLING */
 

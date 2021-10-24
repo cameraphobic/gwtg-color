@@ -132,33 +132,48 @@
                 <div class="col-2"></div>
                     <div class="col px-5 mx-5">
                         <div class="row mt-5">
-                            <div class="col eyebrow-dark d-flex justify-content-between align-items-end">
+                            <div class="col px-0 eyebrow-dark d-flex justify-content-between align-items-end">
                                 <h2>Film</h2>
-                                <p class="numb-results mb-1">10 / 100</p>
+                                <small class="numb-results mb-1">6 / 50 results</small>
                             </div>
                         </div>
-                        <div class="container">
                         <div class="row py-2 mt-3 px-0">
-                            <div class="col">
-                                <span class="badge rounded-pill bg-dark">35mm</span>
-                                <span class="badge rounded-pill bg-dark">Black & White</span>
-                                <span class="badge rounded-pill bg-dark">Kodak</span> 
+                            <div class="col px-0">
+                                <span class="badge rounded-pill bg-dark py-2 mr-1 my-1">35mm &nbsp;<i class="fas fa-times-circle"></i></span>
+                                <span class="badge rounded-pill bg-dark py-2 mx-1 my-1">Black & White &nbsp;<i class="fas fa-times-circle"></i></span>
+                                <span class="badge rounded-pill bg-dark py-2 mx-1 my-1">Kodak &nbsp;<i class="fas fa-times-circle"></i></span> 
                             </div>
                             <div class="col px-0 mx-0">
-                                <p class="text-end"><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasRight">Filter <i class="fas fa-filter"></i></a></p>
+                                <p class="text-end"><a class="btn btn-dark mx-0" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasRight">Filter &nbsp; <i class="fas fa-sliders-h"></i></a></p>
                             </div>
-                        </div>
                         </div>
 
                         <!-- FILTER SHEET -->
 
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                             <div class="offcanvas-header">
-                              <h5 id="offcanvasRightLabel">Filter by...</h5>
+                              <h5 class="text-white" id="offcanvasRightLabel">Filter Products</h5>
                               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
-                            <div class="offcanvas-body">
+                                <div class="offcanvas-body">
+                                <div class="top-level-sorting ps-3">
+                                    <div class="mb-3">
+                                        <label for="sort-by">Order results by:</label>
+                                        <select id="sort-by" name="sort-by">
+                                            <option value="rating-high">Rating — high to low</option>
+                                            <option value="rating-low">Rating — low to high</option>
+                                            <option value="recent" selected>Most recent</option>
+                                            <option value="helpful">Most helpful</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="200" data-bs-html="true" title="Sometimes that one special film is sold out. You can still browse out of stock items and sign up for restock notifications.">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">Hide out of stock items <i class="fas fa-xs fa-question-circle align-top"></i>
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <!-- Format -->
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -169,31 +184,74 @@
                                         <div class="accordion-body">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  35mm
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">35mm</span> <span class="filter-pack">24 exposure roll</span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  120
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">35mm</span> <span class="filter-pack">36 exposure roll</span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  4x5
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-delay="200" data-bs-html="true" title="For <b>medium format</b> cameras">120 <i class="fas fa-xs fa-question-circle align-top"></i></span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Instant
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">220</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">4x5</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">5x7</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">8x10</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">600</span> <span class="filter-pack">instant film</span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">SX-70</span> <span class="filter-pack">instant film</span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Instax</span> <span class="filter-pack">all sizes</span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Disposable cameras</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                         </div>
                                       </div>
                                     </div>
+                                    <!-- Type -->
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -204,25 +262,74 @@
                                         <div class="accordion-body">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Color (C-41)
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Black & White Negative</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Black & White
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Black & White Reversal</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Lomography
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Black & White Chromogenic</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Color Negative</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Color Slide/Transparency</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Daylight</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Infared</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Instant</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Lomo/Experimental</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Peel-apart</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Super 8</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                         </div>
                                       </div>
                                     </div>
+                                    <!-- Brand -->
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
@@ -233,38 +340,200 @@
                                         <div class="accordion-body">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Kodak
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Arista</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Ilford
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Agfa</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  FUJIFILM
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">CatLABS</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  Polaroid
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">CineStill</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">dubblefilm</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Foma</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Fujifilm</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Ilford</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Impossible Project</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Kodak</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">KONO</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Lomography</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Polaroid</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Street Candy</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">REVLOG</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Rollei</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                  <span class="filter-pair"><span class="filter-core">Yodica</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
                                                 </label>
                                             </div>
                                         </div>
                                       </div>
                                     </div>
+                                    <!-- ISO -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFour">
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                            Film Speed/ISO
+                                          </button>
+                                        </h2>
+                                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour">
+                                          <div class="accordion-body">
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">100</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">125</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">160</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">200</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">320</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">400</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">800</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                                </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <!-- Process -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFive">
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                            Process
+                                          </button>
+                                        </h2>
+                                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive">
+                                          <div class="accordion-body">
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">B/W</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">C-41</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                  <label class="form-check-label d-flex justify-content-between" for="flexCheckDefault">
+                                                    <span class="filter-pair"><span class="filter-core">E-6</span> <span class="filter-pack"></span></span> <span class="filter-count">(12)</span>
+                                                  </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="button-pair mt-5 mx-auto d-flex justify-content-evenly">
                                 <button type="button" class="btn btn-outline-dark">Clear All</button>
-                                <button type="button" class="btn btn-dark">Apply Filters</button>
+                                <a type="button" class="btn btn-dark" href="product-category-filtered.html">Apply Filters</a>
                                 </div>
                             </div>
-                          </div>
+                        </div>
 
 <!-- END FILTER SHEET -->
                         <div class="row px-0">
@@ -429,22 +698,6 @@
             </div>
         </section>
 
-        <!-- PAGINATION -->
-
-        <nav aria-label="Page navigation example" class="my-5">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-
         <!-- FOOTER -->
 
         <footer class="py-5 bg-dark">
@@ -468,5 +721,13 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Initialize Tooltips -->
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
     </body>
 </html>
