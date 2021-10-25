@@ -1,6 +1,6 @@
-/** {
+/* {
     border: 1px solid blue;
-}*/
+} */
 
 html {
     font-size: 16px;
@@ -299,4 +299,35 @@ h2 {
 
 footer {
     color: white;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+.site-map li {
+    font-size: .8rem;
+    padding: .4rem;
+}
+
+/* HOVER CARDS */
+
+.sample-image {
+    background-image: url('../images/products/35-17.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image-fade {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.image-fade:hover {
+    opacity: 1;
+}
+
+.plain-link {
+    text-decoration: none;
+    color: black;
 }
