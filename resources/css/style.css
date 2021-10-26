@@ -127,6 +127,10 @@ h2 {
     border-bottom: 1px solid black;
 }
 
+.topbrow-dark {
+    border-top: 1px solid black;
+}
+
 /* FORM FIELD STYLING */
 
 .form-control {
@@ -164,6 +168,29 @@ h2 {
     font-style: italic;
     font-weight: 300;
     font-size: .8rem;
+}
+
+.offcanvas-body {
+    position: relative;
+}
+
+.button-pair {
+    position: fixed;
+    top: 88%;
+    width: 362px;
+    height: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.clunky-p {
+    width: 100%;
+    text-align: end;
+}
+
+#flexSwitchCheckDefault {
+    margin-left: .4rem;
 }
 
 /* HOMEPAGE CONTENT */
@@ -312,8 +339,98 @@ footer ul {
 
 /* HOVER CARDS */
 
-.sample-image {
+.sample-image1a {
+    background-image: url('../images/products/35-5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image2a {
+    background-image: url('../images/products/35-9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image3a {
+    background-image: url('../images/products/sheet-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image4a {
     background-image: url('../images/products/35-17.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image1b {
+    background-image: url('../images/products/120-8.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image2b {
+    background-image: url('../images/products/35-13.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image3b {
+    background-image: url('../images/products/insta-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image4b {
+    background-image: url('../images/products/120-5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image1c {
+    background-image: url('../images/products/35-7.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image2c {
+    background-image: url('../images/products/120-7.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image3c {
+    background-image: url('../images/products/35-10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image4c {
+    background-image: url('../images/products/120-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image1d {
+    background-image: url('../images/products/sheet-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image2d {
+    background-image: url('../images/products/35-16.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image3d {
+    background-image: url('../images/products/35-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image4d {
+    background-image: url('../images/products/35-18.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -330,4 +447,9 @@ footer ul {
 .plain-link {
     text-decoration: none;
     color: black;
+}
+
+.card-footer {
+    background: white;
+    border-top: none;
 }

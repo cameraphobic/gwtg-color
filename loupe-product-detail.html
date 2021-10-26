@@ -182,12 +182,15 @@
                         </div>
                     </div>
 
-        <!-- PRODUCT DETAILS SECTION -->
+        <!-- PRODUCT DETAIL SECTION -->
 
         <section class="py-5 px-5 mt-5 mx-4">
-                <div class="row">
-                    <div class="col-2 mr-5"></div>
-                    <div class="col-1 my-auto">
+            <div class="row">
+                <div class="col-2 ms-5"></div>
+                <div class="col">
+                <div class="row mt-auto">
+                    <div class="col-1">
+                        <img class="img-fluid my-2" src="resources/images/products/35-5.png">
                         <img class="img-fluid my-2" src="resources/images/photos/l-koi.jpg">
                         <img class="img-fluid my-2" src="resources/images/photos/l-signs.jpg">
                         <img class="img-fluid my-2" src="resources/images/photos/l-record-store.jpg">
@@ -205,30 +208,60 @@
                             /* Specify the id of the image, and the strength of the magnifier glass: */
                         </script>
 
-                    </div>
-                    <div class="col">
+                    </div> 
+                    <div class="col me-3 my-auto">
                         <div class="row">
-                            <h1>Product Title</h1>
-                            <div class="fs-5 mb-3">
-                                <p class="price">$10.00</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                        </div>
-                        <div class="row input-group">
-                            <div class="qty d-flex">
-                                <button class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button>
-                                <input type="text" inputmode="decimal" class="form-control qty" placeholder=""></input>
-                                <button class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button>
-                            </div>
-                            <div class="col">
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                Add to cart
-                            </button>
+                            <h1 class="mb-3">Kodak Portra 400 Color Negative Film</h1>
+                            <small class="mt-0">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                (15 reviews)
+                            </small>
+                            <p class="price my-2">$10.00 <span class="filter-pack">$2.40/exposure</span></p>
+                            <small class="mb-5 mt-2"><i class="fas fa-shipping-fast"></i> <a href="#">Shipping</a> calculated at checkout</small>
+                            <div class="row input-group">
+                                <div class="qty d-flex">
+
+                                    <script>
+                                        $("input[type='number']").inputSpinner()
+                                    </script>
+
+                                    <input type="number" class="form-control qty" placeholder="0"></input>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                    Add to cart
+                                </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        </section>
+                </div>
+            </div>
+
+            <!-- ZOOM MODAL -->
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid" src="resources/images/photos/l-dalias.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <p>f-stop info here</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
 
         <!-- RELATED PRODUCTS GALLERY -->
 

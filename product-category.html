@@ -164,31 +164,19 @@
                                 <p class="text-end"><a class="btn btn-outline-dark mx-0" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasRight">Filter &nbsp; <i class="fas fa-sliders-h fa-lg"></i></a></p>
                             </div>
                         </div>
-
+                        
                         <!-- FILTER SHEET -->
 
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                             <div class="offcanvas-header">
-                              <h5 class="text-white" id="offcanvasRightLabel">Filter Products</h5>
+                              <h5 class="text-white my-0 py-0" id="offcanvasRightLabel">Filter Products</h5>
                               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                                 <div class="offcanvas-body">
-                                <div class="top-level-sorting ps-3">
-                                    <div class="mb-3">
-                                        <label for="sort-by">Order results by:</label>
-                                        <select id="sort-by" name="sort-by">
-                                            <option value="rating-high">Rating — high to low</option>
-                                            <option value="rating-low">Rating — low to high</option>
-                                            <option value="recent" selected>Best selling</option>
-                                            <option value="helpful">Price — high to low</option>
-                                            <option value="helpful">Price — low to high</option>
-                                        </select>
-                                    </div>
                                     <div class="form-check form-switch">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="200" data-bs-html="true" title="Sometimes that one special film is sold out. You can still browse out of stock items and sign up for restock notifications.">
-                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">Hide out of stock items <i class="fas fa-xs fa-question-circle align-top"></i>
+                                        <label class="form-check-label" for="flexSwitchCheckDefault" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="200" data-bs-html="true" title="Film sells like hotcakes. You can still browse out of stock items and sign up for restock notifications.">
+                                            <input class="form-check-input mx-2" type="checkbox" id="flexSwitchCheckDefault">Hide out of stock items <i class="fas fa-xs fa-question-circle align-top"></i>
                                         </label>
-                                    </div>
                                 </div>
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <!-- Format -->
@@ -546,9 +534,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="button-pair mt-5 mx-auto d-flex justify-content-evenly">
-                                <button type="button" class="btn btn-outline-dark">Clear All</button>
-                                <a type="button" class="btn btn-dark" href="product-category-filtered.html">Apply Filters</a>
+                                <div class="button-pair d-flex flex-column align-items-start justify-content-around">
+                                    <p class="eyebrow-dark clunky-p">(X) results</p>
+                                    <div class="d-flex-inline flex-fill justify-content-evenly">
+                                        <button type="button" class="btn btn-outline-dark filter-button">&nbsp; &nbsp; Clear All &nbsp; &nbsp;</button>
+                                        <a type="button" class="btn btn-dark filter-button" href="product-category-filtered.html">Apply Filters</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -556,11 +547,24 @@
                         <!-- THUMBNAILS ROW 1-->    
 
                         <div class="row px-0">
+                            <div class="col mb-4">
+                                <label for="sort-by">Order results by:</label>
+                                <select id="sort-by" name="sort-by">
+                                    <option value="rating-high">Rating — high to low</option>
+                                    <option value="rating-low">Rating — low to high</option>
+                                    <option value="recent" selected>Most recent</option>
+                                    <option value="helpful">Most helpful</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row px-0">
                             <div class="col">
                             <div class="card h-100">
-                                <img src="resources/images/products/35-1.png" class="card-img-top" alt="...">
+                                <div class="sample-image1a">
+                                    <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-dalias.jpg" alt=""></a>
+                                </div>
                                 <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Kodak Ektar 100 Color Negative Film</h5></a>
+                                <a href="product-detail.html" class="plain-link"><h5 class="card-title">Kodak Ektar 100 Color Film</h5></a>
                                 <small>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -569,19 +573,21 @@
                                     <i class="far fa-star"></i>
                                 </small>
                                 <p class="card-text">$11.99</p>
-                                <p class="card-text">35mm, 36 exposure, ISO 100, in stock</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small class="mb-5 mt-2"><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
-                                    <a href="#" class="btn btn-primary btn-dark">Add to Cart</a>
+                                <div class="card-footer text-center">
+                                    <p class="card-text text-start mt-0 mb-4"><small>35mm, 36 exposures, ISO 100</small></p>
+                                    <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                    <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
                                 </div>
                             </div>
                             </div>
                             <div class="col">
                             <div class="card h-100">
-                                <img src="resources/images/products/35-9.png" class="card-img-top" alt="...">
+                                <div class="sample-image2a">
+                                    <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-portrait1.jpg" alt=""></a>
+                                </div>
                                 <div class="card-body">
-                                <a href="product-detail.html"><h5 class="card-title">Ilford FP4 Plus Black and White Film</h5></a>
+                                <a href="product-detail.html" class="plain-link"><h5 class="card-title">Ilford FP4 Plus Black and White Film</h5></a>
                                 <small>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -590,19 +596,21 @@
                                     <i class="far fa-star"></i>
                                 </small>
                                 <p class="card-text">Out of Stock</p>
-                                <p class="card-text">35mm, 24 exposure, ISO 125, in stock</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small><i class="fas fa-truck"></i> Available for order 10/31/21</small>
-                                    <a href="#" class="btn btn-outline-dark flex-shrink-0" type="button">Notify Me</a>
+                                <div class="card-footer text-center">
+                                    <p class="card-text mt-0 mb-4 text-start"><small>35mm, 24 exposure, ISO 125</small></p>
+                                    <a href="#" class="btn btn-outline-dark d-block" type="button">Notify Me</a>
+                                    <small class="my-0"><i class="fas fa-truck"></i> Available for order 10/31/21</small>
                                 </div>
                             </div>
                             </div>
                             <div class="col">
                             <div class="card h-100">
-                                <img src="resources/images/products/sheet-3.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Fujifilm Fujichrome Provia RDP III 100F Color Slide Film</h5></a>
+                                <div class="sample-image3a">
+                                    <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-record-store.jpg" alt=""></a>
+                                </div>
+                                <div class="card-body pb-0 mb-0">
+                                <a href="product-detail.html" class="plain-link"><h5 class="card-title">Fujifilm Fujichrome Provia RDP III 100F Color Slide Film</h5></a>
                                 <small>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -611,22 +619,21 @@
                                     <i class="far fa-star"></i>
                                 </small>
                                 <p class="card-text"><s>$89.95</s> <strong>$70.00</strong></p>
-                                <p class="card-text">4x5", 20 sheets, ISO 100, in stock</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small class="mb-5 mt-2"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
-                                    <a href="#" class="btn btn-primary btn-dark">Add to Cart</a>
+                                <div class="card-footer text-center">
+                                    <p class="card-text mt-0 mb-4 text-start"><small>4x5, 20 sheets, ISO 100</small></p>
+                                    <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                    <small class="my-0"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
                                 </div>
                             </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100">
-                                    <div class="sample-image">
-                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-cacti.jpg" alt=""></a>
+                                    <div class="sample-image4a">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/v-road.jpg" alt=""></a>
                                     </div>
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <a href="product-detail.html" class="plain-link"><h5 class="card-title">Astrum Foto Aerial Black and White Film</h5></a>
-                                <p class="card-text">35mm, 36 exposure, ISO 100, limited batch</p>
                                 <small>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -636,9 +643,10 @@
                                 </small>
                                 <p class="card-text">$4.99</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small class="mb-5 mt-2"><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
-                                    <a href="#" class="btn btn-outline-dark flex-shrink-0" type="button">Add to Cart</a>
+                                <div class="card-footer text-center">
+                                    <p class="card-text mt-0 mb-4 text-start"><small>35mm, 36 exposures, ISO 100</small></p>
+                                    <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                    <small class=""><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
                                 </div>
                             </div>
                         </div>
@@ -655,13 +663,12 @@
                     <div class="col px-5 mx-5">
                         <div class="row px-0">
                             <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                <div class="card h-100">
+                                    <div class="sample-image1b">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-alley.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">Ilford Ortho Plus Black and White Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -669,53 +676,22 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">$11.91</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text text-start mt-0 mb-4"><small>120, ISO 120</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
                             <div class="col">
                                 <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                    <div class="sample-image2b">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-cat.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">Kodak T-Max Black and White Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -723,12 +699,64 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">Out of Stock</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text mt-0 mb-4 text-start"><small>35mm, 36 exposure, ISO 400</small></p>
+                                        <a href="#" class="btn btn-outline-dark d-block" type="button">Notify Me</a>
+                                        <small class="my-0"><i class="fas fa-truck"></i> Available for order 10/31/21</small>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="sample-image3b">
+                                            <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-man.jpg" alt=""></a>
+                                        </div>
+                                        <div class="card-body pb-0">
+                                        <a href="product-detail.html" class="plain-link"><h5 class="card-title">Polaroid Originals Color 600 Instant Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text"><s>$20.00</s> <strong>$16.80</strong></p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>8 exposures/pack</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class="my-0"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <div class="sample-image4b">
+                                                <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-petals.jpg" alt=""></a>
+                                            </div>
+                                        <div class="card-body d-flex flex-column">
+                                            <a href="product-detail.html" class="plain-link"><h5 class="card-title">Ilford HP-5 Plus Black and White Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text">$7.54</p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>120, ISO 400</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class=""><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- THUMBNAILS ROW 3 -->
@@ -739,13 +767,12 @@
                     <div class="col px-5 mx-5">
                         <div class="row px-0">
                             <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                <div class="card h-100">
+                                    <div class="sample-image1c">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-cowgirl.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">KONO ALIEN Pre-Exposed Experimental Color Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -753,53 +780,22 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">$11.99</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text text-start mt-0 mb-4"><small>35mm, 24 exposures, ISO 200</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
                             <div class="col">
                                 <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                    <div class="sample-image2c">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-koi.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">Fomapan Retro 400 Color Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -807,12 +803,64 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">Out of Stock</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text mt-0 mb-4 text-start"><small>120, ISO 400</small></p>
+                                        <a href="#" class="btn btn-outline-dark d-block" type="button">Notify Me</a>
+                                        <small class="my-0"><i class="fas fa-truck"></i> Available for order 10/31/21</small>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="sample-image3c">
+                                            <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/v-street.jpg" alt=""></a>
+                                        </div>
+                                        <div class="card-body pb-0">
+                                        <a href="product-detail.html" class="plain-link"><h5 class="card-title">CineStill Double X Black and White Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text"><s>$12.00</s> <strong>$10.00</strong></p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>35mm, 36 exposures, Daylight 5500K</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class="my-0"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <div class="sample-image4c">
+                                                <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-red-blossoms.jpg" alt=""></a>
+                                            </div>
+                                        <div class="card-body d-flex flex-column">
+                                            <a href="product-detail.html" class="plain-link"><h5 class="card-title">Kodak Portra 800 Color Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text">$11.99</p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>120 size, ISO 800</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class=""><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- THUMBNAILS ROW 4 -->
@@ -823,13 +871,12 @@
                     <div class="col px-5 mx-5">
                         <div class="row px-0">
                             <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                <div class="card h-100">
+                                    <div class="sample-image1d">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-conservatory.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">Kodak Ektar 100 Color Sheet Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -837,53 +884,22 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">$49.95</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text text-start mt-0 mb-4"><small>4x5, 10 sheets, ISO 100</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
                                 </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </small>
-                                </div>
-                            </div>
-                            </div>
                             <div class="col">
                                 <div class="card h-100">
-                                <img src="resources/images/photos/l-cowgirl.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <a href="product-detail.html" class="stretched-link"><h5 class="card-title">Product Title</h5></a>
-                                <p class="card-text">$100.00</p>
-                                </div>
-                                <div class="card-footer">
+                                    <div class="sample-image2d">
+                                        <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-pub.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail.html" class="plain-link"><h5 class="card-title">Rollei Retro 400S Black and White Film</h5></a>
                                     <small>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -891,12 +907,64 @@
                                         <i class="fas fa-star-half-alt"></i>
                                         <i class="far fa-star"></i>
                                     </small>
+                                    <p class="card-text">Out of Stock</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text mt-0 mb-4 text-start"><small>35mm, 36 exposure, ISO 400</small></p>
+                                        <a href="#" class="btn btn-outline-dark d-block" type="button">Notify Me</a>
+                                        <small class="my-0"><i class="fas fa-truck"></i> Available for order 10/31/21</small>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="sample-image3d">
+                                            <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-signs.jpg" alt=""></a>
+                                        </div>
+                                        <div class="card-body pb-0">
+                                        <a href="product-detail.html" class="plain-link"><h5 class="card-title">Revolog Lazer Color Effects Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text"><s>$15.99</s> <strong>$10.00</strong></p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>35, 36 exposures, ISO 200</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class="my-0"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <div class="sample-image4d">
+                                                <a href="product-detail.html" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-step.jpg" alt=""></a>
+                                            </div>
+                                        <div class="card-body d-flex flex-column">
+                                            <a href="product-detail.html" class="plain-link"><h5 class="card-title">Ilford Pan-F Plus Ultra-Fine Grain Black and White Film</h5></a>
+                                        <small>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <p class="card-text">$11.28</p>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <p class="card-text mt-0 mb-4 text-start"><small>35mm, 36 exposures, ISO 50</small></p>
+                                            <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                            <small class=""><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- PAGINATION -->
@@ -906,11 +974,11 @@
               <li class="page-item disabled">
                 <a class="page-link dark" href="#" tabindex="-1" aria-disabled="true">Previous</a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link plain-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link plain-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link plain-link" href="#">3</a></li>
               <li class="page-item">
-                <a class="page-link dark" href="#">Next</a>
+                <a class="page-link dark plain-link" href="#">Next</a>
               </li>
             </ul>
           </nav>
