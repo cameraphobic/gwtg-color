@@ -133,26 +133,48 @@
                         <div class="row">
                             <div class="col-3 fixed">
                                 <nav class="sidebar py-2 mb-4">
-                                    <ul class="nav flex-column" id="nav_accordion">
+                                    <ul class="nav flex-column" class="nav_accordion">
                                         <li class="nav-item has-submenu">
-                                            <a class="nav-link">Shop</a>
-                                            <ul class="submenu collapse">
-                                                <li><a class="nav-link" href="product-category.html">Film</a></li>
-                                                <li><a class="nav-link" href="#">Darkroom Accessories</a></li>
-                                                <li><a class="nav-link" href="#">Gifts & Cards</a> </li>
+                                            <a class="open">Shop</a>
+                                            <ul class="mb-2">
+                                                <li class="nav-item has-submenu">
+                                                  <a class="open" href="product-category.html">Film</a>
+                                                  <ul class="submenu mb-3">
+                                                    <li><a class="nav-link open" href="#"><i class="fas fa-caret-right"></i> Color Film</a></li>
+                                                    <li><a class="nav-link" href="#">Black & White Film</a></li>
+                                                    <li><a class="nav-link" href="#">Instant Film</a></li>
+                                                    <li><a class="nav-link" href="#">Disposable Cameras</a></li>
+                                                  </ul>
+                                                </li>
+                                                <li class="nav-item has-submenu">
+                                                  <a class="nav-link" href="#">Darkroom Accessories</a>
+                                                  <ul class="submenu collapse mb-3">
+                                                    <li><a class="nav-link" href="#">Film Chemistry</a></li>
+                                                    <li><a class="nav-link" href="#">Tanks & Reels</a></li>
+                                                    <li><a class="nav-link" href="#">Bottles & Storage</a></li>
+                                                  </ul>
+                                                </li>
+                                                <li><a class="nav-link" href="#">Gift Cards</a> </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item has-submenu">
                                             <a class="nav-link" href="#">Photography Services</a>
-                                            <ul class="submenu collapse">
+                                            <ul class="submenu collapse mb-3">
                                                 <li><a class="nav-link" href="#">Film Processing</a></li>
                                                 <li><a class="nav-link" href="#">Printing</a></li>
-                                                <li><a class="nav-link" href="#">Digital Services</a></li>
+                                                <li class="nav-item has-submenu">
+                                                  <a class="nav-link" href="#">Digital Services</a>
+                                                  <ul class="submenu collapse mb-3">
+                                                    <li><a class="nav-link" href="#">Film Scanning</a></li>
+                                                    <li><a class="nav-link" href="#">Digital Archiving</a></li>
+                                                    <li><a class="nav-link" href="#">Retouching/Restoration</a></li>
+                                                  </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item has-submenu">
                                             <a class="nav-link" href="#">About Us</a>
-                                            <ul class="submenu collapse">
+                                            <ul class="submenu collapse mb-3">
                                                 <li><a class="nav-link" href="#">Our Team</a></li>
                                                 <li><a class="nav-link" href="#">Testimonials</a></li>
                                                 <li><a class="nav-link" href="#">Blog</a></li>
@@ -160,7 +182,7 @@
                                         </li>
                                         <li class="nav-item has-submenu">
                                             <a class="nav-link" href="#">How it Works</a>
-                                            <ul class="submenu collapse">
+                                            <ul class="submenu collapse mb-3">
                                                 <li><a class="nav-link" href="#">Turnaround Times</a></li>
                                                 <li><a class="nav-link" href="#">Price Guides</a></li>
                                                 <li><a class="nav-link" href="#">How to Mail Film</a></li>
@@ -170,7 +192,7 @@
                                         </li>
                                         <li class="nav-item has-submenu">
                                             <a class="nav-link" href="#">Help & Support</a>
-                                            <ul class="submenu collapse">
+                                            <ul class="submenu collapse mb-3">
                                                 <li><a class="nav-link" href="#">Frequently Asked Questions</a></li>
                                                 <li><a class="nav-link" href="#">DIY Guides</a></li>
                                                 <li><a class="nav-link" href="#">Returns & Exchanges</a></li>
@@ -178,10 +200,10 @@
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>  
+                            </div>   
                         </div>
-                    </div>
-
+                        </div>
+                        
         <!-- PRODUCT DETAIL SECTION -->
 
         <section class="py-5 px-5 mt-5 mx-4">
@@ -261,6 +283,28 @@
                 </div>
                 </div>
             </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="row py-5">
+            <div class="col-2"></div>
+            <div class="col ps-5 ms-5">
+                <h3>About this Film</h3>
+                <p>KODAK TRI-x Pan Film is a high-speed (ISO 400/27½) panchromatic film that is a good choice for photographing dimly lighted subjects or fast action, 
+                    for photographing subjects that require good depth of field and fast shutter speeds, and for extending the distance range for flash pictures. 
+                    TRI-x Pan Film (TX) is available in120 and 135sizes and 35 and 70 mm long rolls. You can retouch the 120-size film on the emulsion side. 
+                    TRI-x Pan Film is recommended for push-processing applications.</p>
+            </div>
+            <div class="col ps-5 mx-5">
+                <h3>At a Glance</h3>
+                <ul class="ps-3">
+                    <li class="my-3">Fine grain Good for producing high-quality images</li>
+                    <li class="my-3">Wide exposure latitude Rich tonality maintained with over exposure and underexposure</li>
+                    <li class="my-3">High sharpness Good for applications that require a moderate degree of enlargement</li>
+                    <li class="my-3">Lot # and expiration date</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
         <!-- RELATED PRODUCTS GALLERY -->
