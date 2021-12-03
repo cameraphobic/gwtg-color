@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+        
+            <!-- Font Awesome icons -->
+            <script src="https://kit.fontawesome.com/7e04dc6d90.js" crossorigin="anonymous"></script>
+        
+            <!-- Normalize CSS -->
+            <link rel="stylesheet" href="resources/css/normalize.css">
+        
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="resources/css/style.css">
+        
+            <title>Loupe Open</title>
+
+            <!-- LOUPE SCRIPT -->
+            <script>
+                function magnify(imgID, zoom) {
+                  var img, glass, w, h, bw;
+                  img = document.getElementById(imgID);
+                  /*create magnifier glass:*/
+                  glass = document.createElement("DIV");
+                  glass.setAttribute("class", "img-magnifier-glass");
+                  /*insert magnifier glass:*/
+                  img.parentElement.insertBefore(glass, img);
+                  /*set background properties for the magnifier glass:*/
+                  glass.style.backgroundImage = "url('" + img.src + "')";
+                  glass.style.backgroundRepeat = "no-repeat";
+                  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+                  bw = 3;
+                  w = glass.offsetWidth / 1.2;
+                  h = glass.offsetHeight / 1.2;
+                  /*execute a function when someone moves the magnifier glass over the image:*/
+                  glass.addEventListener("mousemove", moveMagnifier);
+                  img.addEventListener("mousemove", moveMagnifier);
+                  /*and also for touch screens:*/
+                  glass.addEventListener("touchmove", moveMagnifier);
+                  img.addEventListener("touchmove", moveMagnifier);
+                  function moveMagnifier(e) {
+                    var pos, x, y;
+                    /*prevent any other actions that may occur when moving over the image*/
+                    e.preventDefault();
+                    /*get the cursor's x and y positions:*/
+                    pos = getCursorPos(e);
+                    x = pos.x;
+                    y = pos.y;
+                    /*prevent the magnifier glass from being positioned outside the image:*/
+                    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+                    if (x < w / zoom) {x = w / zoom;}
+                    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+                    if (y < h / zoom) {y = h / zoom;}
+                    /*set the position of the magnifier glass:*/
+                    glass.style.left = (x - w) + "px";
+                    glass.style.top = (y - h) + "px";
+                    /*display what the magnifier glass "sees":*/
+                    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+                  }
+                  function getCursorPos(e) {
+                    var a, x = 0, y = 0;
+                    e = e || window.event;
+                    /*get the x and y positions of the image:*/
+                    a = img.getBoundingClientRect();
+                    /*calculate the cursor's x and y coordinates, relative to the image:*/
+                    x = e.pageX - a.left;
+                    y = e.pageY - a.top;
+                    /*consider any page scrolling:*/
+                    x = x - window.pageXOffset;
+                    y = y - window.pageYOffset;
+                    return {x : x, y : y};
+                  }
+                }
+                </script>
+
+                <!-- NESTED NAV SCRIPT -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function(){
+                        document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+                        
+                        element.addEventListener('click', function (e) {
+                    
+                            let nextEl = element.nextElementSibling;
+                            let parentEl  = element.parentElement;	
+                    
+                            if(nextEl) {
+                                e.preventDefault();	
+                                let mycollapse = new bootstrap.Collapse(nextEl);
+                                
+                                if(nextEl.classList.contains('show')){
+                                    mycollapse.hide();
+                                } else {
+                                    mycollapse.show();
+                                    // find other submenus with class=show
+                                    var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                                    // if it exists, then close all of them
+                                    if(opened_submenu){
+                                        new bootstrap.Collapse(opened_submenu);
+                                    }
+                                }
+                            }
+                        }); // addEventListener
+                        }) // forEach
+                    }); 
+                </script>
+          </head>
+          <body>
+        
+                    <!-- BANNER UTILITIES -->
+                    <nav class="navbar fixed-top navbar-light bg-light">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="index.html">Go With The Grain</a>
+                          <div class="d-flex flex-row">
+                          <form class="d-flex mx-5">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn search" type="submit"><i class="fas fa-search fa-lg"></i></button>
+                          </form>
+                          <i class="fas fa-shopping-cart fa-lg mx-2 my-auto"></i>
+                          <i class="fas fa-user-astronaut fa-lg mx-3 my-auto"></i>
+                        </div>
+                        </div>
+                      </nav>
+
+                      <!-- NESTED NAV -->
+
+                      <div class="black-side">
+                        <div class="row">
+                            <div class="col-3 fixed">
+                                <nav class="sidebar py-2 mb-4">
+                                    <ul class="nav flex-column" class="nav_accordion">
+                                        <li class="nav-item has-submenu">
+                                            <a class="open">Shop</a>
+                                            <ul class="mb-3">
+                                                <li class="nav-item has-submenu">
+                                                  <a class="nav-link open" href="product-category.html"><i class="fas fa-caret-right"></i> Film</a>
+                                                </li>
+                                                <li class="nav-item has-submenu">
+                                                  <a class="nav-link" href="#">Darkroom Accessories</a>
+                                                </li>
+                                                <li><a class="nav-link" href="#">Gift Cards</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item has-submenu">
+                                            <a class="nav-link" href="#">Photography Services</a>
+                                            <ul class="submenu collapse mb-3">
+                                                <li><a class="nav-link" href="#">Film Processing</a></li>
+                                                <li><a class="nav-link" href="#">Printing</a></li>
+                                                <li class="nav-item has-submenu">
+                                                  <a class="nav-link" href="#">Digital Services</a>
+                                                  <ul class="submenu collapse mb-3">
+                                                    <li><a class="nav-link" href="#">Film Scanning</a></li>
+                                                    <li><a class="nav-link" href="#">Digital Archiving</a></li>
+                                                    <li><a class="nav-link" href="#">Retouching/Restoration</a></li>
+                                                  </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item has-submenu">
+                                            <a class="nav-link" href="#">About Us</a>
+                                            <ul class="submenu collapse mb-3">
+                                                <li><a class="nav-link" href="#">Our Team</a></li>
+                                                <li><a class="nav-link" href="#">Testimonials</a></li>
+                                                <li><a class="nav-link" href="#">Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item has-submenu">
+                                            <a class="nav-link" href="#">How it Works</a>
+                                            <ul class="submenu collapse mb-3">
+                                                <li><a class="nav-link" href="#">Turnaround Times</a></li>
+                                                <li><a class="nav-link" href="#">Price Guides</a></li>
+                                                <li><a class="nav-link" href="#">How to Mail Film</a></li>
+                                                <li><a class="nav-link" href="#">Risk-Free Policy</a></li>
+                                                <li><a class="nav-link" href="#">Order Gift Cards</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item has-submenu">
+                                            <a class="nav-link" href="#">Help & Support</a>
+                                            <ul class="submenu collapse mb-3">
+                                                <li><a class="nav-link" href="#">Frequently Asked Questions</a></li>
+                                                <li><a class="nav-link" href="#">DIY Guides</a></li>
+                                                <li><a class="nav-link" href="#">Returns & Exchanges</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>   
+                        </div>
+                        </div>
+                        
+        <!-- PRODUCT DETAIL SECTION -->
+
+        <section class="py-5 px-5 mt-5 mx-4">
+            <div class="row">
+                <div class="col-2 ms-5"></div>
+                <div class="col">
+                <div class="row mt-auto">
+                    <div class="col-1 my-auto">
+                        <a href="#"><img class="img-fluid my-2" src="resources/images/task2-color/l-dalias.jpg"></a>
+                        <a href="#"><img class="img-fluid my-2" src="resources/images/task2-color/l-koi.jpg"></a>
+                        <a href="#"><img class="img-fluid my-2" src="resources/images/task2-color/l-record-store.jpg"></a>
+                        <a href="#"><img class="img-fluid my-2" src="resources/images/task2-color/l-red-blossoms.jpg"></a>
+                    </div>
+                    <div class="col pe-5">
+                      <div class="img-magnifier-container">
+                        <img class="img-fluid bg-light" id="myimage" src="resources/images/task2-color/120-2.png" alt="dalias">
+                      </div>
+
+                        <script>
+                            /* Execute the magnify function: */
+                            magnify("myimage", 5);
+                            /* Specify the id of the image, and the strength of the magnifier glass: */
+                        </script>
+
+                        <p class="py-0 mt-0 mb-4" id="loupe-toggle"><a href="product-detail-colorb.html"><i class="fas fa-times-circle me-2"></i>Close Loupe</a></p>
+
+                    </div> 
+                    <div class="col me-3 my-auto">
+                        <div class="row">
+                            <h1 class="mb-3">Fujifilm Fujicolor Pro 400H 120 Color Film</h1>
+                            <small class="mt-0">
+                                <a href="#reviews">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                (5 reviews)
+                                </a>
+                            </small>
+                            <p class="price my-2">$11.99</p>
+                            <small class="mb-5 mt-2"><i class="fas fa-shipping-fast"></i> <a href="#">Shipping</a> calculated at checkout</small>
+                            <div class="row input-group">
+                                <div class="qty d-flex">
+
+                                    <script>
+                                        $("input[type='number']").inputSpinner()
+                                    </script>
+
+                                    <input type="number" class="form-control qty" placeholder="0"></input>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                    Add to cart
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="row py-5">
+            <div class="col-2"></div>
+            <div class="col ps-5 ms-5">
+                <h3>About this Film</h3>
+                    <p>FUJICOLOR PRO 400H PROFESSIONAL is a new-generation professional daylight type color negative film incorporating Fujifilm's proprietary fourth color-sensitive layer in addition to the conventional three RGB-sensitive layers.</p>
+                    <p>It produces superb skin tones with smoothly continuous gradation from the highlights to the shadows, and gives an excellent three-dimensional feeling in such details as fabrics and other textures.
+                    </p>
+                </div>
+                <div class="col ps-5 mx-5">
+                    <h3>At a Glance</h3>
+                    <ul class="ps-3">
+                        <li class="my-3"><strong>ISO 400/24° in C-41 process</strong></li>
+                        <li class="my-3"><strong>Daylight-balanced color negative film</strong></li>
+                        <li class="my-3"><strong>Faithful color reproduction</strong></li>
+                        <li class="my-3"><strong>Wide exposure latitude</strong></li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+        <!-- RELATED PRODUCTS GALLERY -->
+
+        <section class="pt-5">
+            <div class="row">
+                <div class="col-2"></div>
+                    <div class="col px-5 mx-5">
+                        <div class="row mt-5 mb-4">
+                            <div class="col eyebrow-dark px-0">
+                                <h2>Related Products</h2>
+                            </div>
+                        </div>
+                        <div class="row px-0">
+                            <div class="col px-0">
+                                <div class="card h-100">
+                                    <div class="sample-image-task2a">
+                                        <a href="product-detail-colorc.html" class=""><img class="img-fluid image-fade" src="resources/images/task2-color/l-red-blossoms.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail-colorc.html" class="plain-link"><h5 class="card-title">Kodak Ektar 100 120 Color Film</h5></a>
+                                    <small>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </small>
+                                    <p class="card-text">$14.99</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text text-start mt-0 mb-4"><small>120, ISO 100, color negative</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="sample-image-task2e">
+                                        <a href="product-detail-color.html" class=""><img class="img-fluid image-fade" src="resources/images/task2-color/lomo2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body">
+                                    <a href="product-detail-color.html" class="plain-link"><h5 class="card-title">Lomography LomoChrome Purple XR 120 Color Film</h5></a>
+                                    <small>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </small>
+                                    <p class="card-text">$9.99</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text text-start mt-0 mb-4"><small>120, ISO 100-400, color negative</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small><i class="fas fa-shipping-fast"></i> In stock & ready to ship</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="sample-image-task2b">
+                                        <a href="#" class=""><img class="img-fluid image-fade" src="resources/images/photos/l-subway-platform.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body pb-0">
+                                    <a href="#" class="plain-link"><h5 class="card-title">KONO ORIGINAL CANDY 200 35mm Color Film</h5></a>
+                                    <small>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </small>
+                                    <p class="card-text"><s>$14.99</s> <strong>$10.00</strong></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text mt-0 mb-4 text-start"><small>35mm, 24 exposures, ISO 200, experimental, color negative</small></p>
+                                        <a href="#" class="btn btn-primary btn-dark d-block">Add to Cart</a>
+                                        <small class="my-0"><i class="fas fa-shipping-fast"></i> 5 in stock - order soon!</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col px-0">
+                                <div class="card h-100">
+                                    <div class="sample-image-task2d">
+                                        <a href="#" class=""><img class="img-fluid image-fade" src="resources/images/task2-color/l-dalias.jpg" alt=""></a>
+                                    </div>
+                                    <div class="card-body pb-0">
+                                    <a href="#" class="plain-link"><h5 class="card-title">FUJIFILM Fujichrome Provia 100F 4x5 Color Transparency Film</h5></a>
+                                    <small>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </small>
+                                    <p class="card-text">Out of Stock</p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <p class="card-text mt-0 mb-4 text-start"><small>4x5, 20 sheets, ISO 100, color transparency</small></p>
+                                        <a href="#" class="btn btn-outline-dark d-block">Notify Me</a>
+                                        <small class="my-0"><i class="fas fa-truck"></i> Available for order 11/31/21</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER REVIEWS -->
+
+        <section class="py-5 my-5" id="reviews">
+            <div class="row">
+                <div class="col-2"></div>
+                    <div class="col px-5 mx-5">
+                        <div class="row mt-5 mb-4">
+                            <div class="col eyebrow-dark d-flex justify-content-between align-items-end px-0">
+                                <h2>Customer Reviews</h2>
+                                <p class="numb-results mb-1">5 / 5 reviews</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mb-4">
+                            <div class="col px-0">
+                                <label for="sort-by">Sort by:</label>
+                                <select id="sort-by" name="sort-by">
+                                    <option value="rating-high">Rating — high to low</option>
+                                    <option value="rating-low">Rating — low to high</option>
+                                    <option value="recent" selected>Most recent</option>
+                                    <option value="helpful">Most helpful</option>
+                                </select>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault" id="toggle1">Includes images<input class="form-check-input mx-2" type="checkbox" id="flexSwitchCheckDefault"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col px-0">
+                                <div class="list-group">
+                                    <div class="list-group-item mb-4 bg-light">
+                                      <div class="d-flex w-100 justify-content-between">
+                                        <small class="mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <small class="text-muted">3 days ago</small>
+                                      </div>
+                                      <h5 class="mb-1">YMMV</h5>
+                                      <p class="mb-1">Getting my film back was certainly interesting because I was surprised at how intense the colors were.
+                                        Next time, I’ll be sure to go with 400 or higher as it is more versatile and I can have more control over the intensity of the effect.
+                                      </p>
+                                      <div class="customer-gallery">
+                                          <div class="row my-4">
+                                              <div class="col">
+                                                <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModala">
+                                                    <img class="img-fluid" src="resources/images/photos/l-subway-platform.jpg">
+                                                </a>    
+                                              </div>
+                                              <div class="col">
+                                                <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModalb">
+                                                    <img class="img-fluid" src="resources/images/photos/l-cowgirl.jpg">
+                                                </a>    
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModalc">
+                                                    <img class="img-fluid" src="resources/images/photos/l-signs.jpg">
+                                                </a>    
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModald">
+                                                    <img class="img-fluid" src="resources/images/photos/v-coastline.jpg">
+                                                </a>    
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <small class="text-muted">Was this helpful? <a href="#">YES</a> | <a href="#">NO</a></small>
+                                    </div>
+                                    <div class="list-group-item mb-4 bg-light">
+                                      <div class="d-flex w-100 justify-content-between">
+                                        <small class="mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <small class="text-muted">3 days ago</small>
+                                      </div>
+                                      <h5 class="mb-1">Cheap fun film</h5>
+                                      <p class="mb-1">Sometimes the results are great, sometimes not. 
+                                          I've had shots come back with great shadow detail, good highlight detail, and nice color saturation. 
+                                          The same roll, or a different roll with the same camera, can come back with excessive grain, no shadow detail, and lackluster saturation.</p>
+                                      <small class="text-muted">Was this helpful? <a href="#">YES</a> | <a href="#">NO</a></small>
+                                    </div>
+                                    <div class="list-group-item mb-4 bg-light">
+                                      <div class="d-flex w-100 justify-content-between">
+                                        <small class="mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                        <small class="text-muted">3 days ago</small>
+                                      </div>
+                                      <h5 class="mb-1">I dig the results!</h5>
+                                      <p class="mb-1">The colors are vibrant and gives you that modern aesthetic feel that I'm looking for.</p>
+                                      <small class="text-muted">Was this helpful? <a href="#">YES</a> | <a href="#">NO</a></small>
+                                    </div>
+                                    <div class="list-group-item mb-4 bg-light">
+                                        <div class="d-flex w-100 justify-content-between">
+                                          <small class="mb-2">
+                                              <i class="fas fa-star"></i>
+                                              <i class="fas fa-star"></i>
+                                              <i class="fas fa-star"></i>
+                                              <i class="fas fa-star-half-alt"></i>
+                                              <i class="far fa-star"></i>
+                                          </small>
+                                          <small class="text-muted">3 days ago</small>
+                                        </div>
+                                        <h5 class="mb-1">Performs well in low light</h5>
+                                        <p class="mb-1">I would not hesitate to order this film again. 
+                                            The pictures I've attached are from my first roll and I'm currently working on my second. 
+                                            I'm satisfied with how these pictures came out, colors look good, and I think that these rolls are priced well and ship fast!</p>
+                                        <div class="customer-gallery">
+                                            <div class="row my-4">
+                                                <div class="col">
+                                                    <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModala">
+                                                        <img class="img-fluid" src="resources/images/photos/l-subway-platform.jpg">
+                                                    </a>    
+                                                  </div>
+                                                  <div class="col">
+                                                    <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModalb">
+                                                        <img class="img-fluid" src="resources/images/photos/l-cowgirl.jpg">
+                                                    </a>    
+                                                </div>
+                                                <div class="col">
+                                                    <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModalc">
+                                                        <img class="img-fluid" src="resources/images/photos/l-signs.jpg">
+                                                    </a>    
+                                                </div>
+                                                <div class="col">
+                                                    <a class="btn mx-0 px-0 my-0 py-0" data-bs-toggle="modal" data-bs-target="#custModald">
+                                                        <img class="img-fluid" src="resources/images/photos/v-coastline.jpg">
+                                                    </a>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Was this helpful? <a href="#">YES</a> | <a href="#">NO</a></small>
+                                      </div>
+                                      <div class="list-group-item mb-4 bg-light">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <small class="mb-2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <i class="far fa-star"></i>
+                                            </small>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                        <h5 class="mb-1">Versatile film for outdoors, and various lighting conditions</h5>
+                                        <p class="mb-1">Love it's teal undertones in shadows and warmth in midtones.</p>
+                                        <small class="text-muted">Was this helpful? <a href="#">YES</a> | <a href="#">NO</a></small>
+                                      </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CUSTOMER IMAGE MODALS -->
+
+            <div class="modal fade" id="custModala" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <img class="img-fluid" src="resources/images/photos/l-subway-platform.jpg">
+                    </div>
+                    <div class="modal-footer text-white bg-dark">
+                        <p>Customer quote / f stop info</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="custModalb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <img class="img-fluid" src="resources/images/photos/l-cowgirl.jpg">
+                    </div>
+                    <div class="modal-footer text-white bg-dark">
+                        <p>Customer quote / f stop info</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="custModalc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <img class="img-fluid" src="resources/images/photos/l-signs.jpg">
+                    </div>
+                    <div class="modal-footer text-white bg-dark">
+                        <p>Customer quote / f stop info</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="custModald" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <img class="img-fluid" src="resources/images/photos/v-coastline.jpg">
+                    </div>
+                    <div class="modal-footer text-white bg-dark">
+                        <p>Customer quote / f stop info</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PAGINATION
+
+        <nav aria-label="Page navigation example" class="my-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                <a class="page-link dark" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                <a class="page-link dark" href="#">Next</a>
+                </li>
+            </ul>
+            </nav> -->
+
+        <!-- FOOTER -->
+
+        <footer class="py-5 bg-dark px-0">
+            <div class="row d-flex justify-content-around ms-0 me-4">
+                <div class="col-3 ms-0 me-3">
+                    <p class="text-center"><strong>Go With The Grain</strong></p>
+                    <p class="text-center">Open Mon to Sun<br />7am to 7pm PST</p>
+                    <p class="text-center">(555) 555-5555</p>
+                    <p class="text-center">lab@gowiththegrain.com</p>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item fa-2x"><i class="fab fa-twitter"></i></li>
+                        <li class="list-inline-item fa-2x"><i class="fab fa-instagram"></i></li>
+                        <li class="list-inline-item fa-2x"><i class="fab fa-snapchat-ghost"></i></li>
+                        <li class="list-inline-item fa-2x"><i class="fab fa-vimeo-v"></i></li>
+                    </ul>    
+                </div>
+                <div class="col px-0 mx-0">
+                    <div class="row eyebrow-light px-0 mx-0">
+                        <div class="col mx-0 px-0">
+                            <ul class="ps-0 pe-2 site-map">
+                                <li><strong>Shop</strong></li>
+                                <li>Film</li>
+                                <li>Film Chemistry</li>
+                                <li>Tanks & Reels</li>
+                                <li>Bottles & Storage</li>
+                                <li>Gift Cards</li>
+                            </ul>
+                        </div>
+                        <div class="col mx-0 px-0">
+                            <ul class="px-2 site-map">
+                                <li><strong>Photo Services</strong></li>
+                                <li>Film Processing</li>
+                                <li>Printing</li>
+                                <li>Film Scanning</li>
+                                <li>Digital Archiving</li>
+                                <li>Retouching / Restoration</li>
+                            </ul>
+                        </div>
+                        <div class="col mx-0 px-0">
+                            <ul class="px-2 site-map">
+                                <li><strong>About Us</strong></li>
+                                <li>Our Team</li>
+                                <li>Blog</li>
+                                <li>Testimonials</li>
+                            </ul>
+                        </div>
+                        <div class="col mx-0 px-0">
+                            <ul class="px-2 site-map">
+                                <li><strong>How it Works</strong></li>
+                                <li>Turn Times</li>
+                                <li>Price Guides</li>
+                                <li>How to Mail Film</li>
+                                <li>Risk-Free Policy</li>
+                            </ul>
+                        </div>
+                        <div class="col mx-0 px-0">
+                            <ul class="px-2 site-map">
+                                <li><strong>Help & Support</strong></li>
+                                <li>FAQs</li>
+                                <li>DIY Guides</li>
+                                <li>Returns & Exchanges</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-3">Join our mailing list for deals, tutorials, and lab updates!</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-light" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Shaack input spinner plugin -->
+        <script src="./src/bootstrap-input-spinner.js"></script>
+        <script>
+            $("input[type='number']").inputSpinner()
+        </script>
+    </body>
+</html>

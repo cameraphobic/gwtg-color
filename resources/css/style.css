@@ -10,6 +10,10 @@ body {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* BANNER UTILITIES */
 
 .navbar-brand {
@@ -219,8 +223,8 @@ h2 {
   border-radius: 50%;
   cursor: none;
   /*Set the size of the magnifier glass:*/
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
 /* SAMPLE IMAGE GALLERY */
@@ -299,20 +303,69 @@ h2 {
   /* The icon inside the overlay is positioned in the middle vertically and horizontally */
 .zoom-icon {
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     position: absolute;
     top: 95%;
-    left: 10%;
+    left: 12%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
   }
 .loupe-icon {
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     position: absolute;
     top: 95%;
-    left: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* When you move the mouse over the icon, change color */
+.fa-user:hover {
+    color: #eee;
+  }
+
+/* OVERLAY FOR WHITE SEAMLESS PROD PICS */
+
+.container-zoom {
+    position: relative;
+    width: 100%;
+  }
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+.overlay-clear {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background: rgba(0, 0, 0, 0);
+  }
+  /* When you mouse over the container, fade in the overlay icon*/
+.container-zoom:hover .overlay-clear {
+    opacity: 1;
+  }
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.zoom-icon-clear {
+    color: black;
+    font-size: 1.1em;
+    position: absolute;
+    top: 95%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.loupe-icon-clear {
+    color: black;
+    font-size: 1.1em;
+    position: absolute;
+    top: 95%;
+    left: 35%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
@@ -435,6 +488,62 @@ footer ul {
     background-size: cover;
 }
 
+/* TEST CARDS */
+
+.sample-image-task1a {
+    background-image: url('../images/task1-bw/insta-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task1b {
+    background-image: url('../images/task1-bw/120-5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task1c {
+    background-image: url('../images/task1-bw/35-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task1d {
+    background-image: url('../images/task1-bw/35-13.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task2a {
+    background-image: url('../images/products/120-10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task2b {
+    background-image: url('../images/task2-color/35-14.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task2c {
+    background-image: url('../images/task2-color/120-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task2d {
+    background-image: url('../images/task2-color/sheet-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sample-image-task2e {
+    background-image: url('../images/products/120-9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .image-fade {
     opacity: 0;
     transition-duration: 1s;
@@ -453,3 +562,15 @@ footer ul {
     background: white;
     border-top: none;
 }
+
+/* CUSTOMER REVIEWS */
+
+.list-group-item {
+    border: none;
+}
+
+#toggle1 {
+    color: #0d6efd;
+}
+
+/* MODAL STYLINGS */
